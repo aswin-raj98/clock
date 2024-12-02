@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("building.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: snow;
+}
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75vmin;
+    height: 75vmin;
+    background: linear-gradient(145deg, rgba(22, 22, 22, 0.8), rgba(34, 35, 37, 0.8)), 
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
+    border-radius: 50%;
+    /* box-shadow: 8px 8px 15px #222, -8px -8px 15px #ffffff; */
+    font-size: calc(10vmin + 5px);
+    color: #fffb00;
+    text-shadow: 0 0 8px rgba(243, 252, 114, 0.8), 0 0 16px rgba(193, 201, 81, 0.473);
+    position: relative;
+    overflow: hidden;
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+
+
+.clock::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider-round {
+    border-radius: 34px;
+  }
+  
+  .slider-round:before {
+    border-radius: 50%;
+  }
+  .slider-round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider-round:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #000;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider-round {
+    background-color: #fffb00;
+  }
+  
+  input:focus + .slider-round {
+    box-shadow: 0 0 1px #fffb00;
+  }
+  
+  input:checked + .slider-round:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
